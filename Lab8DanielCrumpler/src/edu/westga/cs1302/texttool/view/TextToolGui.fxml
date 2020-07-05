@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="guiPane" prefHeight="469.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.texttool.view.TextToolCodeBehind">
+   <children>
+      <Label layoutX="17.0" layoutY="34.0" text="Title:" />
+      <TextField fx:id="titleTextField" layoutX="78.0" layoutY="28.0" prefHeight="31.0" prefWidth="458.0" />
+      <Label fx:id="titleFeedbackLabel" layoutX="79.0" layoutY="58.0" prefHeight="21.0" prefWidth="458.0" text="The title can have at most 50 characters." textFill="RED" visible="false" />
+      <Label layoutX="15.0" layoutY="92.0" text="Abstract:" />
+      <TextArea fx:id="abstractTextArea" layoutX="78.0" layoutY="92.0" prefHeight="195.0" prefWidth="458.0" />
+      <CheckBox fx:id="wordCountCheckBox" layoutX="79.0" layoutY="289.0" mnemonicParsing="false"  text="Display word count while typing" />
+      <Label fx:id="wordCountLabel" layoutX="341.0" layoutY="287.0" prefHeight="21.0" prefWidth="196.0" text="0 characters, 0 words" />
+      <Button fx:id="removeSpacesButton" layoutX="79.0" layoutY="330.0" mnemonicParsing="false" onAction="#removeSpaces" prefHeight="31.0" prefWidth="221.0" text="Remove duplicate spaces" />
+      <Button fx:id="joinTextButton" layoutX="315.0" layoutY="330.0" mnemonicParsing="false" onAction="#joinText" prefHeight="31.0" prefWidth="221.0" text="Join text" />
+      <Button fx:id="allUppercaseButton" layoutX="79.0" layoutY="374.0" mnemonicParsing="false" onAction="#uppercaseButton" prefHeight="31.0" prefWidth="221.0" text="All uppercase" />
+      <Button fx:id="allLowercaseButton" layoutX="315.0" layoutY="374.0" mnemonicParsing="false" onAction="#lowercaseButton" prefHeight="31.0" prefWidth="221.0" text="All lowercase" />
+      <Button fx:id="capitalizeSentencesButton" layoutX="79.0" layoutY="418.0" mnemonicParsing="false" onAction="#capitalizeSentences" prefHeight="31.0" prefWidth="221.0" text="Capitalise sentences" />
+      <Button fx:id="extractTextFromHTMLButton" layoutX="315.0" layoutY="418.0" mnemonicParsing="false" onAction="#extractText" prefHeight="31.0" prefWidth="221.0" text="Extract text from HTML" />
+   </children>
+</AnchorPane>
