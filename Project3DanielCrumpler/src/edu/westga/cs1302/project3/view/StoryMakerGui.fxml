@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="672.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.project3.view.StoryMakerGuiCodeBehind">
+	<children>
+		<MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="491.0">
+			<menus>
+				<Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#saveItem" text="Save">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="loadMenuItem" mnemonicParsing="false" onAction="#loadItem" text="Load">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu fx:id="toolsMenu" mnemonicParsing="false" text="Tools">
+					<items>
+						<MenuItem fx:id="displayStoryMenuItem" mnemonicParsing="false" onAction="#displayStoryItem" text="Display story">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+                  <MenuItem fx:id="wordCountMenuItem" mnemonicParsing="false" onAction="#wordCount" text="Word count">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+					</items>
+				</Menu>
+				<Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutItem" text="About">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+					</items>
+					<accelerator>
+						<KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+					</accelerator>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<TextField fx:id="titleTextField" layoutX="76.0" layoutY="32.0" prefHeight="25.0" prefWidth="398.0" />
+		<TextField fx:id="authorTextField" layoutX="76.0" layoutY="66.0" prefHeight="25.0" prefWidth="398.0" />
+		<ImageView fx:id="imageView" fitHeight="277.0" fitWidth="278.0" layoutX="20.0" layoutY="114.0" onMouseClicked="#openImage" pickOnBounds="true" preserveRatio="true" />
+		<TextArea fx:id="storyTextArea" blendMode="SRC_ATOP" layoutX="20.0" layoutY="390.0" prefHeight="171.0" prefWidth="278.0" wrapText="true" />
+		<Button fx:id="deletePageButton" layoutX="400.0" layoutY="335.0" mnemonicParsing="false" onAction="#deletePage" prefHeight="25.0" prefWidth="74.0" text="Delete page">
+			<font>
+				<Font size="10.0" />
+			</font>
+		</Button>
+		<Button fx:id="addPageButton" layoutX="317.0" layoutY="335.0" mnemonicParsing="false" onAction="#addPage" prefHeight="25.0" prefWidth="74.0" text="Add page">
+			<font>
+				<Font size="10.0" />
+			</font>
+		</Button>
+		<ListView fx:id="listView" layoutX="317.0" layoutY="135.0" prefHeight="192.0" prefWidth="156.0" />
+		<Button fx:id="nextPageButton" layoutX="440.0" layoutY="366.0" mnemonicParsing="false" onAction="#nextPage" prefHeight="25.0" prefWidth="34.0" text="&gt;" />
+		<Button fx:id="previousPageButton" layoutX="317.0" layoutY="366.0" mnemonicParsing="false" onAction="#previousPage" prefHeight="25.0" prefWidth="34.0" text="&lt;" />
+		<Label layoutX="20.0" layoutY="36.0" text="Title:" />
+		<Label layoutX="20.0" layoutY="70.0" text="Author:" />
+		<Label layoutX="317.0" layoutY="114.0" text="Pages:" />
+		<Line endX="390.0" layoutX="100.0" layoutY="101.0" startX="-100.0" stroke="#0000004d" />
+		<Line endX="177.0" layoutX="121.0" layoutY="115.0" startX="-100.0" stroke="#000000b2" />
+		<Line endX="177.0" layoutX="120.0" layoutY="390.0" startX="-100.0" stroke="#000000b2" />
+		<Line endX="-114.0" endY="176.0" layoutX="134.0" layoutY="215.0" startX="-114.0" startY="-100.0" stroke="#000000b2" />
+		<Line endX="-113.0" endY="176.0" layoutX="411.0" layoutY="214.0" startX="-112.5" startY="-99.0" stroke="#000000b2" />
+      <Button fx:id="findSynonymsButton" layoutX="317.0" layoutY="536.0" mnemonicParsing="false" onAction="#findSynonyms" prefHeight="25.0" prefWidth="156.0" text="Find synonyms" />
+      <TextArea fx:id="synonymTextArea" editable="false" layoutX="317.0" layoutY="398.0" prefHeight="133.0" prefWidth="156.0" />
+      <Button fx:id="movePageButton" layoutX="354.0" layoutY="366.0" mnemonicParsing="false" onAction="#movePage" prefHeight="25.0" prefWidth="82.0" text="Move page">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="fontComboBox" layoutX="23.0" layoutY="601.0" prefHeight="25.0" prefWidth="216.0" promptText="Fonts" />
+      <TextField fx:id="fontSizeTextField" layoutX="24.0" layoutY="633.0" prefHeight="25.0" prefWidth="172.0" promptText="Font Size" />
+      <Label layoutX="23.0" layoutY="582.0" text="Display Settings:" />
+      <ColorPicker fx:id="textColorPicker" layoutX="318.0" layoutY="601.0" prefHeight="25.0" prefWidth="156.0" promptText="Text color" />
+      <ColorPicker fx:id="backgroundColorPicker" layoutX="317.0" layoutY="633.0" prefHeight="25.0" prefWidth="156.0" promptText="Background Color" />
+      <Line endX="391.29290771484375" endY="-7.0" layoutX="105.0" layoutY="581.0" startX="-105.0" startY="-7.0" stroke="#0000004d" />
+      <Label layoutX="249.0" layoutY="605.0" text="Text color:" />
+      <Label layoutX="208.0" layoutY="637.0" text="Background color:" />
+	</children>
+</AnchorPane>
