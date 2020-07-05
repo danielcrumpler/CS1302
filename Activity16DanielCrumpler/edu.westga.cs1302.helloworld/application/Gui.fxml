@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<FlowPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="edu.westga.cs1302.helloworld.controller.Controller">
+	<children>
+		<Label fx:id="nameLabel" text="Enter your name:" />
+		<TextField fx:id="nameTextField" text="Type your name here;" />
+	</children>
+</FlowPane>
