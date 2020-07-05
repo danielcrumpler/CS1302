@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="pane" prefHeight="739.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.retail.view.RetailCodeBehind">
+   <children>
+      <Label layoutX="25.0" layoutY="64.0" text="Department:" />
+      <ComboBox fx:id="departmentsComboBox" layoutX="115.0" layoutY="59.0" prefWidth="150.0" />
+      <Label layoutX="323.0" layoutY="39.0" text="Department name:" />
+      <TextField fx:id="departmentNameTextField" layoutX="323.0" layoutY="60.0" />
+      <Button fx:id="addDepartmentButton" layoutX="323.0" layoutY="104.0" mnemonicParsing="false" onAction="#onAddDepartment" prefHeight="31.0" prefWidth="187.0" text="Add Department" />
+      <MenuBar layoutY="-1.0" prefHeight="26.0" prefWidth="558.0">
+        <menus>
+          <Menu text="_File">
+            <items>
+              <MenuItem fx:id="fileOpenMenuItem" onAction="#onFileOpen" text="_Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="fileSaveMenuItem" onAction="#onFileSave" text="_Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane fx:id="productPane" layoutX="1.0" layoutY="155.0" prefHeight="317.0" prefWidth="558.0">
+         <children>
+            <Label fx:id="errorLabel" layoutX="7.0" layoutY="4.0" prefHeight="32.0" prefWidth="238.0" textFill="RED" wrapText="true" />
+            <Label layoutX="14.0" layoutY="44.0" text="UPC:" />
+            <TextField fx:id="upcTextField" layoutX="65.0" layoutY="39.0" prefHeight="26.0" prefWidth="165.0" />
+            <Label fx:id="upcErrorLabel" layoutX="30.0" layoutY="68.0" prefHeight="17.0" prefWidth="200.0" textAlignment="RIGHT" textFill="RED" />
+            <Label layoutX="14.0" layoutY="84.0" text="Description:" />
+            <TextField fx:id="descriptionTextField" layoutX="30.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" />
+            <Label fx:id="descriptionErrorLabel" layoutX="30.0" layoutY="134.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label layoutX="23.0" layoutY="167.0" text="Revenue:" />
+            <TextField fx:id="revenueTextField" layoutX="103.0" layoutY="162.0" prefHeight="26.0" prefWidth="127.0" />
+            <Label fx:id="revenueErrorLabel" layoutX="30.0" layoutY="191.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label layoutX="23.0" layoutY="223.0" text="Quantity:" />
+            <TextField fx:id="quantityTextField" layoutX="103.0" layoutY="218.0" prefHeight="26.0" prefWidth="127.0" />
+            <Label fx:id="quantityErrorLabel" layoutX="30.0" layoutY="245.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+            <Label layoutX="250.0" layoutY="14.0" text="Products" />
+            <ListView fx:id="productsListView" layoutX="250.0" layoutY="38.0" prefHeight="213.0" prefWidth="284.0" />
+            <Button fx:id="addButton" layoutX="28.0" layoutY="269.0" mnemonicParsing="false" onAction="#onAddProduct" prefHeight="26.0" prefWidth="95.0" text="Add" />
+            <Button fx:id="updateButton" layoutX="140.0" layoutY="269.0" mnemonicParsing="false" onAction="#onUpdateProduct" prefWidth="95.0" text="Update" />
+            <Button fx:id="deleteButton" layoutX="345.0" layoutY="269.0" mnemonicParsing="false" onAction="#onDeleteProduct" prefHeight="26.0" prefWidth="95.0" text="Delete" />
+         </children>
+      </Pane>
+      <Separator layoutX="4.0" layoutY="151.0" prefHeight="5.0" prefWidth="550.0" />
+      <Pane fx:id="summaryPane" layoutY="477.0" prefHeight="291.0" prefWidth="558.0">
+         <children>
+            <RadioButton fx:id="revenueRadioButton" layoutX="15.0" layoutY="41.0" mnemonicParsing="false" text="Report by revenue range" />
+            <Label layoutX="40.0" layoutY="69.0" text="Revenue range:" />
+            <TextField fx:id="revenueRangeTextField" layoutX="132.0" layoutY="64.0" prefHeight="26.0" prefWidth="102.0" text="100.00" />
+            <RadioButton fx:id="productRadioButton" layoutX="15.0" layoutY="123.0" mnemonicParsing="false" text="Report of specified products" />
+            <TextArea fx:id="summaryTextArea" editable="false" layoutX="253.0" layoutY="39.0" prefHeight="235.0" prefWidth="284.0" />
+            <Label layoutX="40.0" layoutY="151.0" text="Search term:" />
+            <CheckBox fx:id="allDepartmentsCheckBox" layoutX="39.0" layoutY="204.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="187.0" text="Include all departments" />
+            <Label layoutX="250.0" layoutY="14.0" text="Summary Report" />
+            <TextField fx:id="searchTermTextField" disable="true" layoutX="132.0" layoutY="146.0" prefHeight="26.0" prefWidth="102.0" />
+            <Button layoutX="33.0" layoutY="238.0" mnemonicParsing="false" onAction="#onGenerateReport" prefHeight="31.0" prefWidth="200.0" text="Generate Report" />
+            <Label fx:id="revenueRangeErrorLabel" layoutX="133.0" layoutY="88.0" prefHeight="17.0" prefWidth="102.0" textFill="RED" />
+            <Label fx:id="searchTermErrorLabel" layoutX="130.0" layoutY="172.0" prefHeight="21.0" prefWidth="111.0" textFill="RED" />
+         </children>
+      </Pane>
+      <Separator layoutX="4.0" layoutY="473.0" prefHeight="5.0" prefWidth="550.0" />
+   </children>
+</AnchorPane>
