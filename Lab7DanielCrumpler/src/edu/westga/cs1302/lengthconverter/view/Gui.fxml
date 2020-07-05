@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.lengthconverter.view.GuiCodeBehind">
+	<children>
+		<Label layoutX="30.0" layoutY="34.0" text="Length">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</Label>
+		<Label layoutX="218.0" layoutY="34.0" text="Unit (IN, YD, FT, MI)">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</Label>
+		<Label fx:id="errorMessageLabel" layoutX="31.0" layoutY="79.0" prefHeight="18.0" prefWidth="338.0" />
+		<Button layoutX="19.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleTextButton" prefHeight="26.0" prefWidth="359.0" text="Convert to Metric" />
+		<TextField fx:id="lengthTextField" layoutX="30.0" layoutY="53.0" />
+		<TextField fx:id="unitTextField" layoutX="218.0" layoutY="53.0" />
+		<TextArea fx:id="outputTextArea" editable="false" layoutX="31.0" layoutY="96.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="154.0" prefWidth="337.0">
+			<font>
+				<Font name="Monospaced Regular" size="12.0" />
+			</font>
+		</TextArea>
+	</children>
+</AnchorPane>
